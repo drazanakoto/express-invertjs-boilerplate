@@ -13,6 +13,6 @@ export class AuthController {
   @httpGet('/')
   public hello(@request() req: Request, @response() res: Response): any {
     const message = this.authService.login()
-    res.send({ message })
+    res.send({ message });
   }
 }
