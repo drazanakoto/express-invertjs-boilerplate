@@ -5,14 +5,13 @@ import { controller, httpGet, request, response } from 'inversify-express-utils'
 import { AuthService } from './interfaces'
 import { TYPES } from './types'
 
-
 @controller('/auth')
 export class AuthController {
-  constructor(@inject(TYPES.AuthService) private readonly authService: AuthService) { }
+  constructor (@inject(TYPES.AuthService) private readonly authService: AuthService) { }
 
   @httpGet('/')
-  public hello(@request() req: Request, @response() res: Response): any {
+  public hello (@request() req: Request, @response() res: Response): any {
     const message = this.authService.login()
-    res.send({ message });
+    res.send({ message })
   }
 }
