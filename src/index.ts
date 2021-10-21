@@ -1,6 +1,6 @@
-import * as http from 'http';
+import * as http from 'http'
 
-import { handler } from './app';
+import { handler } from './app'
 
 // create server
 const port = 5000

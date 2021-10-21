@@ -8,11 +8,7 @@
     "build": "tsc",
     "start": "nodemon",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "lint --fix",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*": ["yarn lint"]
+    "lint:fix": "yarn lint --fix"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +23,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.1",
+    "husky": "^7.0.4",
     "jest": "^27.3.1",
     "nodemon": "^2.0.14",
     "ts-jest": "^27.0.7",
@@ -38,6 +35,9 @@
     "inversify": "^6.0.1",
     "inversify-express-utils": "^6.4.3",
     "reflect-metadata": "^0.1.13"
+  },
+  "hooks": {
+    "pre-commit": "yarn lint"
   },
   "jest": {
     "moduleFileExtensions": [
