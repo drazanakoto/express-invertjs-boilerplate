@@ -1,10 +1,13 @@
-import { ContainerModule, interfaces } from 'inversify'
-import { AuthService } from './interfaces'
-import { AuthServiceImpl } from './auth.service'
+import './auth.controller';
+
+import { ContainerModule, interfaces } from 'inversify';
+
+import { AuthServiceImpl } from './auth.service';
+import { AuthService } from './interfaces';
 import { TYPES } from './types';
-import './auth.controller'
 
-
-export const authContainerModule = new ContainerModule((bind: interfaces.Bind) => {
-  bind<AuthService>(TYPES.AuthService).to(AuthServiceImpl)
-})
+export const authContainerModule = new ContainerModule(
+  (bind: interfaces.Bind) => {
+    bind<AuthService>(TYPES.AuthService).to(AuthServiceImpl);
+  },
+);
