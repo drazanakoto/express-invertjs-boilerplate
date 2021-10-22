@@ -10,9 +10,9 @@ export class AuthController {
   @inject(TYPES.AuthService) private readonly authService: AuthService;
 
   @httpGet('/')
-  public hello(@request() req: Request, @response() res: Response): void {
+  public hello(@request() req: Request, @response() res: Response): any {
     const message = this.authService.login('');
-    res.send({ message });
+    return { message };
   }
 
   @httpGet('/:name')
