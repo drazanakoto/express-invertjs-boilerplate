@@ -1,6 +1,5 @@
-import { Request, Response } from 'express';
 import { inject } from 'inversify';
-import { controller, httpGet, request, requestParam, response } from 'inversify-express-utils';
+import { controller, httpGet, requestParam } from 'inversify-express-utils';
 
 import { AuthService } from './interfaces';
 import { TYPES } from './types';
@@ -10,7 +9,7 @@ export class AuthController {
   @inject(TYPES.AuthService) private readonly authService: AuthService;
 
   @httpGet('/')
-  public hello(@request() req: Request, @response() res: Response): any {
+  public hello(): any {
     const message = this.authService.login('');
     return { message };
   }
