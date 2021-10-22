@@ -1,3 +1,3 @@
 export interface AuthService {
-  login: () => string
+  login(name: string): string;
 }
