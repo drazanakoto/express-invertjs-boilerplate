@@ -25,5 +25,10 @@ app.use(express.text());
  */
 const container = new Container();
 container.load(authContainerModule);
+
+
+/**
+ * create server
+ */
 const server = new InversifyExpressServer(container, null, { rootPath: '/api/v1' }, app);
 export const handler = server.build();
