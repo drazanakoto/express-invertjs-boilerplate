@@ -21,7 +21,7 @@ app.use(express.text());
 
 /**
  * inversify configuration
- * 
+ *
  */
 const container = new Container();
 container.load(authContainerModule);

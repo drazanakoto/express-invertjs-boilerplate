@@ -5,7 +5,6 @@ import { AuthService } from './auth.service';
 
 @controller('/auth')
 export class AuthController {
-
   @inject(TYPES.AuthService)
   private readonly authService: AuthService;
 
