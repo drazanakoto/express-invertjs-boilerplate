@@ -15,10 +15,13 @@ const app = express();
  */
 app.use(cors());
 app.use(helmet());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.text());
 
 /**
  * inversify configuration
+ * 
  */
 const container = new Container();
 container.load(authContainerModule);
