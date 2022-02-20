@@ -26,7 +26,6 @@ app.use(express.text());
 const container = new Container();
 container.load(authContainerModule);
 
-
 /**
  * create server
  */
