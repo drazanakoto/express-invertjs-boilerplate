@@ -9,13 +9,13 @@ export class AuthController {
   private readonly authService: AuthService;
 
   @httpGet('/')
-  public hello(): any {
+  public hello() {
     const message = this.authService.login('');
     return { message };
   }
 
   @httpGet('/:name')
-  public helloWithName(@requestParam('name') name: string): any {
+  public helloWithName(@requestParam('name') name: string) {
     const message = this.authService.login(name);
     return { message };
   }
